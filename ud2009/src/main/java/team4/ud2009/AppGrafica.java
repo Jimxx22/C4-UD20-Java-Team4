@@ -37,6 +37,7 @@ public class AppGrafica {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("aa");
 				
+				
 			}
 		});
 		
@@ -48,7 +49,6 @@ public class AppGrafica {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("aa");
-				
 			}
 		});
 		frame.getContentPane().add(tglbtn12);
@@ -215,7 +215,13 @@ public class AppGrafica {
 	
 	
 	//Funcion comparar colores
-	
+	public boolean compararColores(JToggleButton button, JToggleButton button2) {
+		boolean result=false;
+		if (button.getBackground() == button2.getBackground()) {
+			result=true;
+		}
+		return result;
+	}
 	
 	
 	
