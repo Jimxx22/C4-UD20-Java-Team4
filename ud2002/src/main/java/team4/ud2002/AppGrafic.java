@@ -1,7 +1,6 @@
 package team4.ud2002;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -13,7 +12,9 @@ import java.awt.event.ActionEvent;
 
 public class AppGrafic {
 
+
 	protected JFrame frame;
+
 
 	/**
 	 * Create the application.
