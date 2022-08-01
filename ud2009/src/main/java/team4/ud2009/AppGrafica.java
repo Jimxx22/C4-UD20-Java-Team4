@@ -1,24 +1,27 @@
-package team4.ud2009;
-import javax.swing.JFrame;
+package team4.ud2004;
 
+import javax.swing.JFrame;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Stack;
 import javax.swing.JToggleButton;
 
 public class AppGrafica {
 
 	protected JFrame frame;
 	private List<JToggleButton> cartas = new ArrayList<JToggleButton>();
+	private Stack<Color> colors = new Stack<Color>();
+	private Color COLOR_DEFAULT = new Color(238,238,238);
 
 	/**
 	 * Create the application.
 	 */
 	public AppGrafica() {
+		setColors();
 		initialize();
 	}
 
@@ -34,27 +37,17 @@ public class AppGrafica {
 		JToggleButton tglbtn11 = new JToggleButton("");
 		cartas.add(tglbtn11);
 		tglbtn11.addActionListener(new ActionListener() {
-			
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn11.setBackground(colores(1));
-
-		}});
-
-		
+			public void actionPerformed(ActionEvent e) {	
+			}
+		});
 		frame.getContentPane().add(tglbtn11);
 		
 		JToggleButton tglbtn12 = new JToggleButton("");
 		cartas.add(tglbtn12);
 		tglbtn12.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn12.setBackground(colores(2));
-				
-				
 			}
 		});
 		frame.getContentPane().add(tglbtn12);
@@ -62,11 +55,8 @@ public class AppGrafica {
 		JToggleButton tglbtn13 = new JToggleButton("");
 		cartas.add(tglbtn13);
 		tglbtn13.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tglbtn13.setBackground(colores(3));
-				
 			}
 		});
 		frame.getContentPane().add(tglbtn13);
@@ -74,11 +64,8 @@ public class AppGrafica {
 		JToggleButton tglbtn14 = new JToggleButton("");
 		cartas.add(tglbtn14);
 		tglbtn14.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tglbtn14.setBackground(colores(4));
-				
 			}
 		});
 		frame.getContentPane().add(tglbtn14);
@@ -86,11 +73,8 @@ public class AppGrafica {
 		JToggleButton tglbtn21 = new JToggleButton("");
 		cartas.add(tglbtn21);
 		tglbtn21.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tglbtn21.setBackground(colores(5));
-				
 			}
 		});
 		frame.getContentPane().add(tglbtn21);
@@ -98,12 +82,8 @@ public class AppGrafica {
 		JToggleButton tglbtn22 = new JToggleButton("");
 		cartas.add(tglbtn22);
 		tglbtn22.addActionListener(new ActionListener() {
-			
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn22.setBackground(colores(0));
-				
+			public void actionPerformed(ActionEvent e) {				
 			}
 		});
 		frame.getContentPane().add(tglbtn22);
@@ -111,12 +91,8 @@ public class AppGrafica {
 		JToggleButton tglbtn23 = new JToggleButton("");
 		cartas.add(tglbtn23);
 		tglbtn23.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn23.setBackground(colores(0));
-				
 			}
 		});
 		frame.getContentPane().add(tglbtn23);
@@ -124,11 +100,8 @@ public class AppGrafica {
 		JToggleButton tglbtn24 = new JToggleButton("");
 		cartas.add(tglbtn24);
 		tglbtn24.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tglbtn24.setBackground(colores(0));
-				
 			}
 		});
 		frame.getContentPane().add(tglbtn24);
@@ -136,11 +109,8 @@ public class AppGrafica {
 		JToggleButton tglbtn31 = new JToggleButton("");
 		cartas.add(tglbtn31);
 		tglbtn31.addActionListener(new ActionListener() {
-			
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				tglbtn31.setBackground(colores(0));
-				
+			public void actionPerformed(ActionEvent e) {				
 			}
 		});
 		frame.getContentPane().add(tglbtn31);
@@ -148,12 +118,8 @@ public class AppGrafica {
 		JToggleButton tglbtn32 = new JToggleButton("");
 		cartas.add(tglbtn32);
 		tglbtn32.addActionListener(new ActionListener() {
-			
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn32.setBackground(colores(0));
-				
+			public void actionPerformed(ActionEvent e) {				
 			}
 		});
 		frame.getContentPane().add(tglbtn32);
@@ -161,12 +127,8 @@ public class AppGrafica {
 		JToggleButton tglbtn33 = new JToggleButton("");
 		cartas.add(tglbtn33);
 		tglbtn33.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn33.setBackground(colores(0));
-				
 			}
 		});
 		frame.getContentPane().add(tglbtn33);
@@ -174,12 +136,8 @@ public class AppGrafica {
 		JToggleButton tglbtn34 = new JToggleButton("");
 		cartas.add(tglbtn34);
 		tglbtn34.addActionListener(new ActionListener() {
-			
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn34.setBackground(colores(0));
-				
+			public void actionPerformed(ActionEvent e) {				
 			}
 		});
 		frame.getContentPane().add(tglbtn34);
@@ -187,12 +145,8 @@ public class AppGrafica {
 		JToggleButton tglbtn41 = new JToggleButton("");
 		cartas.add(tglbtn41);
 		tglbtn41.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
-				tglbtn41.setBackground(colores(0));
-				
 			}
 		});
 		frame.getContentPane().add(tglbtn41);
@@ -200,12 +154,8 @@ public class AppGrafica {
 		JToggleButton tglbtn42 = new JToggleButton("");
 		cartas.add(tglbtn42);
 		tglbtn42.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
-				tglbtn42.setBackground(colores(0));
-				
 			}
 		});
 		frame.getContentPane().add(tglbtn42);
@@ -213,12 +163,8 @@ public class AppGrafica {
 		JToggleButton tglbtn43 = new JToggleButton("");
 		cartas.add(tglbtn43);
 		tglbtn43.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn43.setBackground(colores(0));
-				
 			}
 		});
 		frame.getContentPane().add(tglbtn43);
@@ -226,26 +172,39 @@ public class AppGrafica {
 		JToggleButton tglbtn44 = new JToggleButton("");
 		cartas.add(tglbtn44);
 		tglbtn44.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn44.setBackground(colores(0));
-				
 			}
 		});
 		frame.getContentPane().add(tglbtn44);	
 		
+		asignarColores();
+		
 	}
 	
 	//Funcion asignar colores aleatorios
-	
 	private void asignarColores() {
-		for(JToggleButton j : cartas) {
-			int rand = (int)(Math.random() * (8 - 1)+1);
-			j.setBackground(colores(rand));
-		}
+		// Settear el color por defecto para que sea del tipo Color
+		for(JToggleButton b : cartas)
+			b.setBackground(COLOR_DEFAULT);
 		
+		boolean asignados = false;
+		while(!asignados) {
+			// Obtener button aleatorio
+			int rand = (int)(Math.random() * (16 - 0)+0);
+			JToggleButton b = cartas.get(rand);
+			
+			// Si no se le ha asignado color, asignarselo
+			if(b.getBackground() == COLOR_DEFAULT)
+				b.setBackground(colors.pop());
+			
+			// Ocultar color backgroud
+			b.setSelected(true);
+			
+			// Si se han asignado todos los colores, salir del bucle
+			if(colors.size() == 0)
+				asignados = true;			
+		}
 	}
 	
 	
@@ -258,54 +217,23 @@ public class AppGrafica {
 		return result;
 	}
 	
-	
-	
-	//Funcion switch colores 
-	
-	public Color colores(int n) {
-		
-		Color color;
-		
-		switch (n) {
-		case 1:
-			//Rojo
-			color=new Color(255,0,0);
-			break;
-		case 2:
-			//Amarillo
-			color=new Color(255,255,0);
-			break;
-		case 3:
-			//Verde
-			color=new Color(51,204,51);
-			break;
-		case 4:
-			//Azul claro
-			color=new Color(51,204,204);
-			break;
-		case 5:
-			//Azul oscuro
-			color=new Color(0,0,255);
-			break;
-		case 6:
-			//Morado
-			color=new Color(204,0,204);
-			break;
-		case 7:
-			//Negro
-			color=new Color(0,0,0);
-			break;
-		case 8:
-			//Naranja
-			color=new Color(255,153,51);
-			break;
-
-		default:
-			color=new Color(0);
-			break;
-		}
-		
-		return color;
+	private void setColors() {
+		colors.add(new Color(255,153,51));
+		colors.add(new Color(100,56,0));
+		colors.add(new Color(204,0,204));
+		colors.add(new Color(0,0,255));
+		colors.add(new Color(51,204,204));
+		colors.add(new Color(51,204,51));
+		colors.add(new Color(255,255,0));
+		colors.add(new Color(255,0,0));
+		colors.add(new Color(255,153,51));
+		colors.add(new Color(100,56,0));
+		colors.add(new Color(204,0,204));
+		colors.add(new Color(0,0,255));
+		colors.add(new Color(51,204,204));
+		colors.add(new Color(51,204,51));
+		colors.add(new Color(255,255,0));
+		colors.add(new Color(255,0,0));
 	}
-	
+
 }
