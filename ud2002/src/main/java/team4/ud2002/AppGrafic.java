@@ -12,7 +12,8 @@ import java.awt.event.ActionEvent;
 
 public class AppGrafic {
 
-	public JFrame frame;
+
+	protected JFrame frame;
 
 
 	/**
