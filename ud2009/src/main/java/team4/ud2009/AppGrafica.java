@@ -22,6 +22,7 @@ public class AppGrafica {
 	private Color COLOR_DEFAULT = new Color(238,238,238);
 
 	int fin=0;
+	int torns=0;
 	
 	private JToggleButton tglbtn11;
 	private JToggleButton tglbtn12;
@@ -293,8 +294,10 @@ public class AppGrafica {
 					System.out.println("Colors iguals");
 					b.setEnabled(false);
 					buttonSelected.setEnabled(false);
+					torns++;
 					fin++;
 				} else {
+					torns++;
 					System.out.println("Colors diferents");
 					new java.util.Timer().schedule( 
 					        new java.util.TimerTask() {
@@ -309,7 +312,7 @@ public class AppGrafica {
 			}
 		}
 		if(fin==8) {
-			JOptionPane.showMessageDialog(null, "Has terminado");
+			JOptionPane.showMessageDialog(null, "Has terminado con " +torns+" turnos");
 		}
 	}
 	
