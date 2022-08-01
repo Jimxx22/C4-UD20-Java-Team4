@@ -39,6 +39,7 @@ public class AppGrafica {
 		tglbtn11.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {	
+				compararColores(tglbtn11);
 			}
 		});
 		frame.getContentPane().add(tglbtn11);
@@ -48,6 +49,7 @@ public class AppGrafica {
 		tglbtn12.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				compararColores(tglbtn12);
 			}
 		});
 		frame.getContentPane().add(tglbtn12);
@@ -57,6 +59,7 @@ public class AppGrafica {
 		tglbtn13.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				compararColores(tglbtn13);
 			}
 		});
 		frame.getContentPane().add(tglbtn13);
@@ -66,6 +69,7 @@ public class AppGrafica {
 		tglbtn14.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				compararColores(tglbtn14);
 			}
 		});
 		frame.getContentPane().add(tglbtn14);
@@ -75,6 +79,7 @@ public class AppGrafica {
 		tglbtn21.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				compararColores(tglbtn21);
 			}
 		});
 		frame.getContentPane().add(tglbtn21);
@@ -83,7 +88,8 @@ public class AppGrafica {
 		cartas.add(tglbtn22);
 		tglbtn22.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {				
+			public void actionPerformed(ActionEvent e) {
+				compararColores(tglbtn22);
 			}
 		});
 		frame.getContentPane().add(tglbtn22);
@@ -93,6 +99,7 @@ public class AppGrafica {
 		tglbtn23.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				compararColores(tglbtn23);
 			}
 		});
 		frame.getContentPane().add(tglbtn23);
@@ -102,6 +109,7 @@ public class AppGrafica {
 		tglbtn24.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				compararColores(tglbtn24);
 			}
 		});
 		frame.getContentPane().add(tglbtn24);
@@ -110,7 +118,8 @@ public class AppGrafica {
 		cartas.add(tglbtn31);
 		tglbtn31.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {				
+			public void actionPerformed(ActionEvent e) {
+				compararColores(tglbtn31);
 			}
 		});
 		frame.getContentPane().add(tglbtn31);
@@ -119,7 +128,8 @@ public class AppGrafica {
 		cartas.add(tglbtn32);
 		tglbtn32.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {				
+			public void actionPerformed(ActionEvent e) {	
+				compararColores(tglbtn32);
 			}
 		});
 		frame.getContentPane().add(tglbtn32);
@@ -129,6 +139,7 @@ public class AppGrafica {
 		tglbtn33.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				compararColores(tglbtn33);
 			}
 		});
 		frame.getContentPane().add(tglbtn33);
@@ -137,7 +148,8 @@ public class AppGrafica {
 		cartas.add(tglbtn34);
 		tglbtn34.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {				
+			public void actionPerformed(ActionEvent e) {	
+				compararColores(tglbtn34);
 			}
 		});
 		frame.getContentPane().add(tglbtn34);
@@ -147,6 +159,7 @@ public class AppGrafica {
 		tglbtn41.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				compararColores(tglbtn41);
 			}
 		});
 		frame.getContentPane().add(tglbtn41);
@@ -156,6 +169,7 @@ public class AppGrafica {
 		tglbtn42.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				compararColores(tglbtn42);
 			}
 		});
 		frame.getContentPane().add(tglbtn42);
@@ -165,6 +179,7 @@ public class AppGrafica {
 		tglbtn43.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				compararColores(tglbtn43);
 			}
 		});
 		frame.getContentPane().add(tglbtn43);
@@ -174,6 +189,7 @@ public class AppGrafica {
 		tglbtn44.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				compararColores(tglbtn44);
 			}
 		});
 		frame.getContentPane().add(tglbtn44);	
@@ -209,12 +225,33 @@ public class AppGrafica {
 	
 	
 	//Funcion comparar colores
-	public boolean compararColores(JToggleButton button, JToggleButton button2) {
-		boolean result=false;
-		if (button.getBackground() == button2.getBackground()) {
-			result=true;
+	public void compararColores(JToggleButton buttonSelected) {
+		for(JToggleButton b : cartas) {
+			// primer cal mirar que el botó no és ell mateix, perquè recorrem la llista de tots els botons
+			// isEnabled implica que encara no s'ha trobar la parella d'aquella carta
+			// isSelected implica que està amagat (no es veu el color), cal mirar que NO isSelected
+			if(b != buttonSelected && b.isEnabled() && !b.isSelected()) {
+				int bCol = b.getBackground().getRGB();
+				int buttSelCol = buttonSelected.getBackground().getRGB();
+				if(bCol == buttSelCol) {
+					System.out.println("Colors iguals");
+					b.setEnabled(false);
+					buttonSelected.setEnabled(false);
+				} else {
+					System.out.println("Colors diferents");
+					new java.util.Timer().schedule( 
+					        new java.util.TimerTask() {
+					            @Override
+					            public void run() {
+					            	b.setSelected(true);
+							buttonSelected.setSelected(true);
+					            }
+					        }, 1000 
+					);
+				}
+				return;
+			}
 		}
-		return result;
 	}
 	
 	private void setColors() {
