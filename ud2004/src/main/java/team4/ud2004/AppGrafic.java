@@ -66,7 +66,6 @@ public class AppGrafic {
 			@Override
 			public void windowOpened(WindowEvent e) {
 				textArea.append("\nWindow Opened");
-				System.out.println("ieeep");
 				super.windowOpened(e);
 			}
 
