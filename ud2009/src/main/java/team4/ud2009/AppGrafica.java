@@ -36,8 +36,7 @@ public class AppGrafica {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				//tglbtn11
-				
+				tglbtn11.setBackground(colores(1));
 			}
 		});
 		
@@ -49,7 +48,7 @@ public class AppGrafica {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				
+				tglbtn12.setBackground(colores(2));
 				
 				
 			}
@@ -61,7 +60,7 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+				tglbtn13.setBackground(colores(3));
 				
 			}
 		});
@@ -72,7 +71,7 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+				tglbtn14.setBackground(colores(4));
 				
 			}
 		});
@@ -83,7 +82,7 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+				tglbtn21.setBackground(colores(5));
 				
 			}
 		});
@@ -94,7 +93,8 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+				
+				tglbtn22.setBackground(colores(0));
 				
 			}
 		});
@@ -105,7 +105,8 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+				
+				tglbtn23.setBackground(colores(0));
 				
 			}
 		});
@@ -116,7 +117,7 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+				tglbtn24.setBackground(colores(0));
 				
 			}
 		});
@@ -127,7 +128,7 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+				tglbtn31.setBackground(colores(0));
 				
 			}
 		});
@@ -138,7 +139,8 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+				
+				tglbtn32.setBackground(colores(0));
 				
 			}
 		});
@@ -149,7 +151,8 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+				
+				tglbtn33.setBackground(colores(0));
 				
 			}
 		});
@@ -160,7 +163,8 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+				
+				tglbtn34.setBackground(colores(0));
 				
 			}
 		});
@@ -171,7 +175,8 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+
+				tglbtn41.setBackground(colores(0));
 				
 			}
 		});
@@ -182,7 +187,8 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+
+				tglbtn42.setBackground(colores(0));
 				
 			}
 		});
@@ -193,7 +199,8 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+				
+				tglbtn43.setBackground(colores(0));
 				
 			}
 		});
@@ -204,7 +211,8 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+				
+				tglbtn44.setBackground(colores(0));
 				
 			}
 		});
@@ -229,35 +237,35 @@ public class AppGrafica {
 		Color color;
 		
 		switch (n) {
-		case 1:
+		case 0:
 			//Rojo
 			color=new Color(255,0,0);
 			break;
-		case 2:
+		case 1:
 			//Amarillo
 			color=new Color(255,255,0);
 			break;
-		case 3:
+		case 2:
 			//Verde
 			color=new Color(51,204,51);
 			break;
-		case 4:
+		case 3:
 			//Azul claro
 			color=new Color(51,204,204);
 			break;
-		case 5:
+		case 4:
 			//Azul oscuro
 			color=new Color(0,0,255);
 			break;
-		case 6:
+		case 5:
 			//Morado
 			color=new Color(204,0,204);
 			break;
-		case 7:
+		case 6:
 			//Negro
 			color=new Color(0,0,0);
 			break;
-		case 8:
+		case 7:
 			//Naranja
 			color=new Color(255,153,51);
 			break;
