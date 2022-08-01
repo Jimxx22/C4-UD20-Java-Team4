@@ -10,6 +10,6 @@ public class App
     public static void main( String[] args )
     {
     	AppGrafic window = new AppGrafic();
-//		window.frame.setVisible(true);
+		window.frame.setVisible(true);
     }
 }

@@ -13,23 +13,7 @@ import java.awt.event.ActionEvent;
 
 public class AppGrafic {
 
-	private JFrame frame;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AppGrafic window = new AppGrafic();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	protected JFrame frame;
 
 	/**
 	 * Create the application.
