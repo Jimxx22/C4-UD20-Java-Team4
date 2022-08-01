@@ -1,7 +1,6 @@
 package team4.ud2002;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -13,23 +12,23 @@ import java.awt.event.ActionEvent;
 
 public class AppGrafic {
 
-	private JFrame frame;
+	public JFrame frame;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AppGrafic window = new AppGrafic();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					AppGrafic window = new AppGrafic();
+//					window.frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the application.
