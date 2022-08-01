@@ -35,7 +35,8 @@ public class AppGrafica {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("aa");
+				
+				//tglbtn11
 				
 				
 			}
@@ -49,6 +50,7 @@ public class AppGrafica {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("aa");
+
 			}
 		});
 		frame.getContentPane().add(tglbtn12);
@@ -227,6 +229,51 @@ public class AppGrafica {
 	
 	//Funcion switch colores 
 	
+	public Color colores(int n) {
+		
+		Color color;
+		
+		switch (n) {
+		case 1:
+			//Rojo
+			color=new Color(255,0,0);
+			break;
+		case 2:
+			//Amarillo
+			color=new Color(255,255,0);
+			break;
+		case 3:
+			//Verde
+			color=new Color(51,204,51);
+			break;
+		case 4:
+			//Azul claro
+			color=new Color(51,204,204);
+			break;
+		case 5:
+			//Azul oscuro
+			color=new Color(0,0,255);
+			break;
+		case 6:
+			//Morado
+			color=new Color(204,0,204);
+			break;
+		case 7:
+			//Negro
+			color=new Color(0,0,0);
+			break;
+		case 8:
+			//Naranja
+			color=new Color(255,153,51);
+			break;
+
+		default:
+			color=new Color(0);
+			break;
+		}
+		
+		return color;
+	}
 	
 	
 
