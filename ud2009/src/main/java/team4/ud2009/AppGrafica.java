@@ -1,5 +1,7 @@
 package team4.ud2009;
+
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -7,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Stack;
 import javax.swing.JToggleButton;
 import java.awt.Rectangle;
 import javax.swing.border.LineBorder;
@@ -16,8 +18,11 @@ public class AppGrafica {
 
 	protected JFrame frame;
 	private List<JToggleButton> cartas = new ArrayList<JToggleButton>();
+	private Stack<Color> colors = new Stack<Color>();
+	private Color COLOR_DEFAULT = new Color(238,238,238);
 
-	private JToggleButton tglbtnA;
+	int fin=0;
+	
 	private JToggleButton tglbtn11;
 	private JToggleButton tglbtn12;
 	private JToggleButton tglbtn13;
@@ -35,11 +40,11 @@ public class AppGrafica {
 	private JToggleButton tglbtn43;
 	private JToggleButton tglbtn44;
 	
-	private int rgbBase;
 	/**
 	 * Create the application.
 	 */
 	public AppGrafica() {
+		setColors();
 		initialize();
 	}
 
@@ -55,27 +60,15 @@ public class AppGrafica {
 		tglbtn11 = new JToggleButton("");
 		tglbtn11.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		tglbtn11.setBackground(Color.WHITE);
-		rgbBase=tglbtn11.getBackground().getRGB();
 		
 		cartas.add(tglbtn11);
 		tglbtn11.addActionListener(new ActionListener() {
-			
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn11.setBackground(colores(1));
-				
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn11;
-				}else {
-					compararColores(tglbtnA,tglbtn11);
-				}
-				
-				
-				tglbtn11.setSelected(false);
+			public void actionPerformed(ActionEvent e) {	
+				compararColores(tglbtn11);
 		}});
 
-		
+			
 		frame.getContentPane().add(tglbtn11);
 		
 		tglbtn12 = new JToggleButton("");
@@ -83,18 +76,9 @@ public class AppGrafica {
 		tglbtn12.setBackground(Color.WHITE);
 		cartas.add(tglbtn12);
 		tglbtn12.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn12.setBackground(colores(1));
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn12;
-				}else {
-					compararColores(tglbtnA,tglbtn12);
-				}
-				tglbtn12.setSelected(false);
-				
+				compararColores(tglbtn12);
 			}
 		});
 		frame.getContentPane().add(tglbtn12);
@@ -104,17 +88,9 @@ public class AppGrafica {
 		tglbtn13.setBackground(Color.WHITE);
 		cartas.add(tglbtn13);
 		tglbtn13.addActionListener(new ActionListener() {
-			
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				tglbtn13.setBackground(colores(2));
-				
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn13;
-				}else {
-					compararColores(tglbtnA,tglbtn13);
-				}
-				tglbtn13.setSelected(false);
+			public void actionPerformed(ActionEvent e) {			
+				compararColores(tglbtn13);
 			}
 		});
 		frame.getContentPane().add(tglbtn13);
@@ -124,16 +100,9 @@ public class AppGrafica {
 		tglbtn14.setBorder(new LineBorder(Color.BLACK, 2));
 		cartas.add(tglbtn14);
 		tglbtn14.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tglbtn14.setBackground(colores(2));
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn14;
-				}else {
-					compararColores(tglbtnA,tglbtn14);
-				}
-				tglbtn14.setSelected(false);
+				compararColores(tglbtn14);
 			}
 		});
 		frame.getContentPane().add(tglbtn14);
@@ -143,17 +112,9 @@ public class AppGrafica {
 		tglbtn21.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		cartas.add(tglbtn21);
 		tglbtn21.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tglbtn21.setBackground(colores(3));
-				
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn21;
-				}else {
-					compararColores(tglbtnA,tglbtn21);
-				}
-				tglbtn21.setSelected(false);
+				compararColores(tglbtn21);
 			}
 		});
 		frame.getContentPane().add(tglbtn21);
@@ -163,18 +124,9 @@ public class AppGrafica {
 		tglbtn22.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		cartas.add(tglbtn22);
 		tglbtn22.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn22.setBackground(colores(3));
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn22;
-				}else {
-					compararColores(tglbtnA,tglbtn22);
-				}
-				tglbtn22.setSelected(false);
-				
+				compararColores(tglbtn22);	
 			}
 		});
 		frame.getContentPane().add(tglbtn22);
@@ -184,18 +136,9 @@ public class AppGrafica {
 		tglbtn23.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		cartas.add(tglbtn23);
 		tglbtn23.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn23.setBackground(colores(4));
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn23;
-				}else {
-					compararColores(tglbtnA,tglbtn23);
-				}
-				tglbtn23.setSelected(false);
-				
+				compararColores(tglbtn23);		
 			}
 		});
 		frame.getContentPane().add(tglbtn23);
@@ -205,17 +148,9 @@ public class AppGrafica {
 		tglbtn24.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		cartas.add(tglbtn24);
 		tglbtn24.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tglbtn24.setBackground(colores(4));
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn24;
-				}else {
-					compararColores(tglbtnA,tglbtn24);
-				}
-				tglbtn24.setSelected(false);
-				
+				compararColores(tglbtn24);	
 			}
 		});
 		frame.getContentPane().add(tglbtn24);
@@ -225,17 +160,9 @@ public class AppGrafica {
 		tglbtn31.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		cartas.add(tglbtn31);
 		tglbtn31.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tglbtn31.setBackground(colores(5));
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn31;
-				}else {
-					compararColores(tglbtnA,tglbtn31);
-				}
-				tglbtn31.setSelected(false);
-				
+				compararColores(tglbtn31);			
 			}
 		});
 		frame.getContentPane().add(tglbtn31);
@@ -245,20 +172,12 @@ public class AppGrafica {
 		tglbtn32.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		cartas.add(tglbtn32);
 		tglbtn32.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn32.setBackground(colores(5));
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn32;
-				}else {
-					compararColores(tglbtnA,tglbtn32);
-				}
-				tglbtn32.setSelected(false);
-				
+				compararColores(tglbtn32);
 			}
 		});
+		
 		frame.getContentPane().add(tglbtn32);
 		
 		tglbtn33 = new JToggleButton("");
@@ -266,18 +185,9 @@ public class AppGrafica {
 		tglbtn33.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		cartas.add(tglbtn33);
 		tglbtn33.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn33.setBackground(colores(6));
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn33;
-				}else {
-					compararColores(tglbtnA,tglbtn33);
-				}
-				tglbtn33.setSelected(false);
-				
+				compararColores(tglbtn33);	
 			}
 		});
 		frame.getContentPane().add(tglbtn33);
@@ -287,18 +197,9 @@ public class AppGrafica {
 		tglbtn34.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		cartas.add(tglbtn34);
 		tglbtn34.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn34.setBackground(colores(6));
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn34;
-				}else {
-					compararColores(tglbtnA,tglbtn34);
-				}
-				tglbtn34.setSelected(false);
-				
+				compararColores(tglbtn34);	
 			}
 		});
 		frame.getContentPane().add(tglbtn34);
@@ -308,18 +209,9 @@ public class AppGrafica {
 		tglbtn41.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		cartas.add(tglbtn41);
 		tglbtn41.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
-				tglbtn41.setBackground(colores(7));
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn41;
-				}else {
-					compararColores(tglbtnA,tglbtn41);
-				}
-				tglbtn41.setSelected(false);
-				
+				compararColores(tglbtn41);	
 			}
 		});
 		frame.getContentPane().add(tglbtn41);
@@ -329,18 +221,9 @@ public class AppGrafica {
 		tglbtn42.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		cartas.add(tglbtn42);
 		tglbtn42.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
-				tglbtn42.setBackground(colores(7));
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn42;
-				}else {
-					compararColores(tglbtnA,tglbtn42);
-				}
-				tglbtn42.setSelected(false);
-				
+				compararColores(tglbtn42);
 			}
 		});
 		frame.getContentPane().add(tglbtn42);
@@ -350,18 +233,9 @@ public class AppGrafica {
 		tglbtn43.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		cartas.add(tglbtn43);
 		tglbtn43.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn43.setBackground(colores(8));
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn43;
-				}else {
-					compararColores(tglbtnA,tglbtn43);
-				}
-				tglbtn43.setSelected(false);
-				
+				compararColores(tglbtn43);
 			}
 		});
 		frame.getContentPane().add(tglbtn43);
@@ -371,95 +245,90 @@ public class AppGrafica {
 		tglbtn44.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		cartas.add(tglbtn44);
 		tglbtn44.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				tglbtn44.setBackground(colores(8));
-				if(tglbtnA==null) {
-					tglbtnA=tglbtn44;
-				}else {
-					compararColores(tglbtnA,tglbtn44);
-				}
-				tglbtn44.setSelected(false);
-				
+				compararColores(tglbtn44);
 			}
 		});
 		frame.getContentPane().add(tglbtn44);	
 		
+		asignarColores();
+		
 	}
 	
 	//Funcion asignar colores aleatorios
-	
 	private void asignarColores() {
-		for(JToggleButton j : cartas) {
-			int rand = (int)(Math.random() * (8 - 1)+1);
-			j.setBackground(colores(rand));
-		}
+		// Settear el color por defecto para que sea del tipo Color
+		for(JToggleButton b : cartas)
+			b.setBackground(COLOR_DEFAULT);
 		
+		boolean asignados = false;
+		while(!asignados) {
+			// Obtener button aleatorio
+			int rand = (int)(Math.random() * (16 - 0)+0);
+			JToggleButton b = cartas.get(rand);
+			
+			// Si no se le ha asignado color, asignarselo
+			if(b.getBackground() == COLOR_DEFAULT)
+				b.setBackground(colors.pop());
+			
+			// Ocultar color backgroud
+			b.setSelected(true);
+			
+			// Si se han asignado todos los colores, salir del bucle
+			if(colors.size() == 0)
+				asignados = true;			
+		}
+	}
+			
+	public void compararColores(JToggleButton buttonSelected) {
+		for(JToggleButton b : cartas) {
+			// primer cal mirar que el botó no és ell mateix, perquè recorrem la llista de tots els botons
+			// isEnabled implica que encara no s'ha trobar la parella d'aquella carta
+			// isSelected implica que està amagat (no es veu el color), cal mirar que NO isSelected
+			if(b != buttonSelected && b.isEnabled() && !b.isSelected()) {
+				int bCol = b.getBackground().getRGB();
+				int buttSelCol = buttonSelected.getBackground().getRGB();
+				if(bCol == buttSelCol) {
+					System.out.println("Colors iguals");
+					b.setEnabled(false);
+					buttonSelected.setEnabled(false);
+					fin++;
+				} else {
+					System.out.println("Colors diferents");
+					new java.util.Timer().schedule( 
+					        new java.util.TimerTask() {
+					            @Override
+					            public void run() {
+					            	b.setSelected(true);
+							buttonSelected.setSelected(true);
+					            }
+					        }, 1000 
+					);
+				}
+			}
+		}
+		if(fin==8) {
+			JOptionPane.showMessageDialog(null, "Has terminado");
+		}
 	}
 	
-	
-	//Funcion comparar colores
-	public void compararColores(JToggleButton button, JToggleButton button2) {
-		if (button.getBackground().getRGB()==button2.getBackground().getRGB() && button.getBackground()!=button2.getBackground()) {
-			button.setEnabled(false);
-			button2.setEnabled(false);		
-		}else {
-			button.setBackground(new Color(rgbBase));;
-			button2.setBackground(new Color(rgbBase));;	
-		}
-		tglbtnA=null;
+	private void setColors() {
+		colors.add(new Color(255,153,51));
+		colors.add(new Color(100,56,0));
+		colors.add(new Color(204,0,204));
+		colors.add(new Color(0,0,255));
+		colors.add(new Color(51,204,204));
+		colors.add(new Color(51,204,51));
+		colors.add(new Color(255,255,0));
+		colors.add(new Color(255,0,0));
+		colors.add(new Color(255,153,51));
+		colors.add(new Color(100,56,0));
+		colors.add(new Color(204,0,204));
+		colors.add(new Color(0,0,255));
+		colors.add(new Color(51,204,204));
+		colors.add(new Color(51,204,51));
+		colors.add(new Color(255,255,0));
+		colors.add(new Color(255,0,0));
 	}
-	
-	
-	
-	//Funcion switch colores 
-	
-	public Color colores(int n) {
-		
-		Color color;
-		
-		switch (n) {
-		case 1:
-			//Rojo
-			color=new Color(255,0,0);
-			break;
-		case 2:
-			//Amarillo
-			color=new Color(255,255,0);
-			break;
-		case 3:
-			//Verde
-			color=new Color(51,204,51);
-			break;
-		case 4:
-			//Azul claro
-			color=new Color(51,204,204);
-			break;
-		case 5:
-			//Azul oscuro
-			color=new Color(0,0,255);
-			break;
-		case 6:
-			//Morado
-			color=new Color(204,0,204);
-			break;
-		case 7:
-			//Negro
-			color=new Color(0,0,0);
-			break;
-		case 8:
-			//Naranja
-			color=new Color(255,153,51);
-			break;
-
-		default:
-			color=new Color(255,255,255);
-			break;
-		}
-		
-		return color;
-	}
-	
 }
