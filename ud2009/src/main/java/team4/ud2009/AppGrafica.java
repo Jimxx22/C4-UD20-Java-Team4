@@ -267,35 +267,35 @@ public class AppGrafica {
 		Color color;
 		
 		switch (n) {
-		case 0:
+		case 1:
 			//Rojo
 			color=new Color(255,0,0);
 			break;
-		case 1:
+		case 2:
 			//Amarillo
 			color=new Color(255,255,0);
 			break;
-		case 2:
+		case 3:
 			//Verde
 			color=new Color(51,204,51);
 			break;
-		case 3:
+		case 4:
 			//Azul claro
 			color=new Color(51,204,204);
 			break;
-		case 4:
+		case 5:
 			//Azul oscuro
 			color=new Color(0,0,255);
 			break;
-		case 5:
+		case 6:
 			//Morado
 			color=new Color(204,0,204);
 			break;
-		case 6:
+		case 7:
 			//Negro
 			color=new Color(0,0,0);
 			break;
-		case 7:
+		case 8:
 			//Naranja
 			color=new Color(255,153,51);
 			break;
@@ -308,6 +308,4 @@ public class AppGrafica {
 		return color;
 	}
 	
-	
-
 }
